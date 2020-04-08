@@ -10,9 +10,78 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_170806) do
+ActiveRecord::Schema.define(version: 2020_04_08_074543) do
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "apply_activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "job_post_id"
+    t.bigint "candidate_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["candidate_id"], name: "index_apply_activities_on_candidate_id"
+    t.index ["job_post_id"], name: "index_apply_activities_on_job_post_id"
+  end
+
+  create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "candidate_name"
+    t.date "date_of_birth"
+    t.string "phone"
+    t.string "avatar"
+    t.string "cv"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_candidates_on_user_id"
+  end
+
+  create_table "employers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "company_logo"
+    t.string "company_name"
+    t.string "company_size"
+    t.string "company_description"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_employers_on_user_id"
+  end
+
+  create_table "job_locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "job_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "post_priority"
+    t.integer "salary_min"
+    t.integer "salary_max"
+    t.string "post_title"
+    t.string "job_description"
+    t.date "job_expired_date"
+    t.bigint "job_location_id"
+    t.bigint "job_type_id"
+    t.bigint "job_status_id"
+    t.bigint "employer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employer_id"], name: "index_job_posts_on_employer_id"
+    t.index ["job_location_id"], name: "index_job_posts_on_job_location_id"
+    t.index ["job_status_id"], name: "index_job_posts_on_job_status_id"
+    t.index ["job_type_id"], name: "index_job_posts_on_job_type_id"
+  end
+
+  create_table "job_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "job_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "post_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "post_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
