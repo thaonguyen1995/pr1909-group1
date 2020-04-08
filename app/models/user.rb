@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :user_type, presence: true, inclusion: { in: %w(candidate employer admin) }
 
-  #contraint
+  # contraint
   has_one :employer
   has_one :candidate
 
