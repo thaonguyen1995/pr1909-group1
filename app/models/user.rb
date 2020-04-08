@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   # Validates
   validates :name, presence: true
-  validates :user_type, presence: true, inclusion: { in: %w(Candidate Employer Admin) }
+  validates :user_type, presence: true, inclusion: { in: %w(candidate employer admin) }
 
-  USER_TYPE = %w(Candidate Employer).freeze
+  USER_TYPE = %w(candidate employer).freeze
 end
