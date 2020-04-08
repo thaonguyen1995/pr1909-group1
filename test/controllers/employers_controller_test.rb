@@ -10,5 +10,4 @@ class EmployersControllerTest < ActionDispatch::IntegrationTest
     get employers_show_url
     assert_response :success
   end
-
 end
