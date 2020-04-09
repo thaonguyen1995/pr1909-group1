@@ -1,14 +1,12 @@
 class SessionsController < Devise::SessionsController
   def create
     @user = User.find_by email: params[:user][:email]
-    if @user.nil? || @user.confirmed_at.nil?
-      render 'new'
-    elsif @user.user_type == "candidate"
+    if @user && @user.confirmed?
       sign_in @user
-      redirect_to :candidates
-    elsif @user.user_type == "employer"
-      sign_in @user
-      redirect_to :employers
+      byebug
+      redirect_to @user.user_type
+    else
+      redirect_to :new_user_session
     end
   end
 end

@@ -3,13 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
 
+  symbolize :user_type
+
   # Validates
   validates :name, presence: true
-  validates :user_type, presence: true, inclusion: { in: %w(candidate employer admin) }
+  validates :user_type, presence: true, inclusion: { in: [:candidates, :employers] }
 
   # contraint
   has_one :employer
   has_one :candidate
 
-  USER_TYPE = %w(candidate employer).freeze
+  USER_TYPE = {"Candidate" => :candidates, "Employer" => :employers} #%w(candidates employers).freeze
 end
