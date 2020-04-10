@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
+
   enum user_type: { candidate: 1, employer: 2, admin: 3 }
 
   # Validates

@@ -62,7 +62,7 @@ class CandidatesController < ApplicationController
 
   private
 
-  def set_candidate
+  def get_candidate
     @candidate = Candidate.find(params[:id])
   end
 
