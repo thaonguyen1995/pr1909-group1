@@ -32,3 +32,4 @@ yarn-debug.log*
 
 # Ignore local_env
 /config/local_env.yml
+/config/application.rb
