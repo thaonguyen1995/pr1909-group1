@@ -1,5 +1,13 @@
-SQL_USERNAME: "" 
+SQL_USERNAME: "root"
 SQL_PASSWORD: ""
+ADMIN_PASSWORD: "<your-password-goes-here>"
 USER_EMAIL: "<your-email-goes-here>"
 USER_PASSWORD: "<your-password-goes-here>"
-ADMIN_PASSWORD: "<your-password-goes-here>"
+
+DB_NAME: "<your-db-name-goes-here>"
+DB_NAME_TEST: "<your-db-test-name-goes-here>"
+
+DB_NAME_PRODUCTION: "<your-db-profuction-name-goes-here>"
+USER_NAME_PRODUCTION: "<your-user-name-production-goes-here>"
+
+PASSWORD_PRODUCTION: "<your-password-production-goes-here>"
