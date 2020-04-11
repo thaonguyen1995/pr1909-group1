@@ -58,4 +58,14 @@ header {
     line-height: 40px;
   }
 }
+.templatemo-nav {
+  border-radius: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 /* end navigation */
