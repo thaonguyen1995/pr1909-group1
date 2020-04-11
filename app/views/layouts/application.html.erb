@@ -16,8 +16,16 @@
   </div>
 
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+    <div class="notice global-notification">
+      <%= notice %></p>
+    </div>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert global-notification">
+      <%= alert %></p>
+    </div>
+    <% end %>
     <%= yield %>
   </div>
 
