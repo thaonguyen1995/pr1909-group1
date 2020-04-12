@@ -2,16 +2,16 @@
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <p><i class="fa fa-phone"></i><span> Phone</span>010-020-030</p>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-6">
         <p>
           <i class="fa fa-envelope"></i><span> Email</span>
           <a href="#">job@company.com</a>
         </p>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-8">
         <ul class="social-icon">
           <li><span>Meet us on</span></li>
           <li><a href="#" class="fab fa-facebook"></a></li>
@@ -38,6 +38,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right ">
         <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Blog' %></li>
         <% if user_signed_in? %>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -52,10 +53,10 @@
         </li>
         <% else %>
         <li>
-          <%= link_to 'Log In', new_user_session_path %>
+          <%= link_to 'Log In', new_user_session_path, class: "btn btn-success btn-sm" %>
         </li>
         <li>
-          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-info btn-sm" %>
         </li>
         <% end %>
       </ul>

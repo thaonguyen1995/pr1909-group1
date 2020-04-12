@@ -6,19 +6,25 @@ User.create!(
   user_type: "admin",
   confirmed_at: Time.zone.now
 )
-User.create!(
-  name: "a", 
-  email: "a@gmail.com",
-  password:  "123456",
-  password_confirmation: "123456", 
-  user_type: "candidate",
-  confirmed_at: Time.zone.now
-)
-User.create!(
-  name: "b", 
-  email: "b@gmail.com",
-  password:  "123456",
-  password_confirmation: "123456", 
-  user_type: "employer",
-  confirmed_at: Time.zone.now
-)
+20.times do |n|
+name  = Faker::Name.name
+email = "candidate-#{n+1}@gmail.com"
+password = "password"
+User.create!(name:  name,
+   email: email,
+   user_type: "candidate",
+   password:              password,
+   password_confirmation: password,
+   confirmed_at: Time.zone.now)
+end
+20.times do |n|
+  name  = Faker::Name.name
+  email = "employer-#{n+1}@gmail.com"
+  password = "password"
+  User.create!(name:  name,
+     email: email,
+     user_type: "employer",
+     password:              password,
+     password_confirmation: password,
+     confirmed_at: Time.zone.now)
+  end
