@@ -6,7 +6,7 @@ User.create!(
   user_type: "admin",
   confirmed_at: Time.zone.now
 )
-20.times do |n|
+40.times do |n|
 User.create!(name:  Faker::Name.name,
    email: "example-#{n+1}@gmail.com",
    user_type: Faker::Number.between(from: 1, to: 2),
