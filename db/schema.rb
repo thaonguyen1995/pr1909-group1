@@ -14,9 +14,8 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
 
   create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "candidate_fullname", limit: 40, null: false
     t.date "date_of_birth"
-    t.string "phone", limit: 20
+    t.string "phone", limit: 16
     t.string "avatar"
     t.string "cv"
     t.datetime "created_at", precision: 6, null: false
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.string "company_logo"
     t.string "company_name", limit: 70
     t.string "company_size", limit: 20
-    t.string "company_description", limit: 1800
+    t.string "company_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_employers_on_user_id"
@@ -47,7 +46,8 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name", limit: 40, null: false
+    t.string "first_name", limit: 15, null: false
+    t.string "last_name", limit: 15, null: false
     t.integer "user_type", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

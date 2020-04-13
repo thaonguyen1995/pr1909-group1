@@ -9,7 +9,8 @@ class User < ApplicationRecord
   enum user_type: { candidate: 1, employer: 2, admin: 3 }
 
   # Validates
-  validates :name, presence: true, length: { maximum: 40 }
+  validates :first_name, presence: true, length: { maximum: 15 }
+  validates :last_name, presence: true, length: { maximum: 15 }
   validates :user_type, presence: true, inclusion: { in: ["candidate", "employer", "admin"] }
 
   USER_TYPE = { "Candidate" => "candidate", "Employer" => "employer" }.freeze
