@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'font-awesome-sass'
 gem "faker"
 gem 'rails_admin'
+gem 'config'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
