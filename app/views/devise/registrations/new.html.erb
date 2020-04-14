@@ -20,7 +20,7 @@
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
         <%= f.input :user_type,
-                    collection: User::USER_TYPE,
+                    collection: RegistrationsHelper::u_type,
                     prompt: "Select Employer or Candidate",
                     label: 'You are?',
                     error: 'User functionality is required, please select ' %>
