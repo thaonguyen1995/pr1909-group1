@@ -16,9 +16,7 @@
 </p>
 
 
-<p>
-  <strong>Cv:</strong>
-  <%= @candidate.cv %>
+<a href="<%= @candidate.cv %>" download>download</a>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |
