@@ -1,5 +1,7 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update]
+  # before_action :check_authorization, only: [:edit, :update]
+  before_action :get_candidate, only: [:show, :edit, :update, :destroy]
 
   # GET /candidates
   # GET /candidates.json
@@ -10,6 +12,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
+    @candidate = Candidate.find_by(params[:id])
   end
 
   # GET /candidates/new
@@ -69,4 +72,10 @@ class CandidatesController < ApplicationController
   def candidate_params
     params.require(:candidate).permit(:user_id, :candidate_name, :date_of_birth, :phone, :avatar, :cv)
   end
+
+  # def check_authorization
+  #   unless current_user.id == Candidate.find(params[:id]).user_id
+  #     redirect_to root_url
+  #   end
+  # end
 end

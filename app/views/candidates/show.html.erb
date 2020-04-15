@@ -1,7 +1,4 @@
-<p>
-  <strong>User:</strong>
-  <%= @candidate.user_id %>
-</p>
+<%= image_tag @candidate.avatar.url if @candidate.avatar? %>
 
 <p>
   <strong>Candidate name:</strong>
@@ -18,10 +15,6 @@
   <%= @candidate.phone %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @candidate.avatar %>
-</p>
 
 <p>
   <strong>Cv:</strong>

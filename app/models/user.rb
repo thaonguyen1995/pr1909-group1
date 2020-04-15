@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   # Validates
   validates :name, presence: true
-  validates :user_type, presence: true, inclusion: { in: ["candidate", "employer", "admin"] }
+  validates :user_type, presence: true, inclusion: { in: %w(candidate employer admin) }
+  mount_uploader :avatar, AvatarUploader
 
-  USER_TYPE = { "Candidate" => "candidate", "Employer" => "employer" }.freeze
+  USER_TYPE = { :Candidate => "candidate", :Employer => "employer" }.freeze
 end
