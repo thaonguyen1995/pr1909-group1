@@ -1,5 +1,6 @@
 class EmployersController < ApplicationController
   before_action :set_employer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update]
 
   # GET /employers
   # GET /employers.json
@@ -10,6 +11,7 @@ class EmployersController < ApplicationController
   # GET /employers/1
   # GET /employers/1.json
   def show
+    @employer = Employer.find_by(params[:id])
   end
 
   # GET /employers/new
