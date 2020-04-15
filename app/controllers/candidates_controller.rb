@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :get_candidate, only: [:show, :edit, :update, :destroy]
 
   # GET /candidates
   # GET /candidates.json
@@ -67,6 +67,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :candidate_name, :date_of_birth, :phone, :avatar, :cv)
+    params.require(:candidate).permit(:user_id, :candidate_fullname, :date_of_birth, :phone, :avatar, :cv)
   end
 end
