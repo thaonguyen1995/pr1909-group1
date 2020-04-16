@@ -1,1 +1,3 @@
-u_type: [ candidate, employer ]
+  u_type:
+    general: { candidate: 1, employer: 2, admin: 3 }
+    set_view: [ candidate, employer ]
