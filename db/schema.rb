@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "first_name", limit: 15, null: false
+    t.string "first_name", limit: 20, null: false
     t.string "last_name", limit: 15, null: false
     t.integer "user_type", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

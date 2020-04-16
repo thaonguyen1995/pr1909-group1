@@ -5,11 +5,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
-
-  enum user_type: { candidate: 1, employer: 2, admin: 3 }
+  enum user_type: Settings.u_type.general.to_h
 
   # Validates
-  validates :first_name, presence: true, length: { maximum: 15 }
+  validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 15 }
-  validates :user_type, presence: true, inclusion: { in: ["candidate", "employer", "admin"] }
+  validates :user_type, presence: true, inclusion: { in: user_types.keys }
 end
