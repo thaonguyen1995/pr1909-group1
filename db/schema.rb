@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_112749) do
+ActiveRecord::Schema.define(version: 2020_04_17_074116) do
 
   create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -32,6 +32,22 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_employers_on_user_id"
+  end
+
+  create_table "job_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "employer_id", null: false
+    t.integer "job_location", default: 1, null: false
+    t.integer "job_type", null: false
+    t.integer "job_status", default: 1, null: false
+    t.integer "post_priority", default: 5, null: false
+    t.integer "salary_min", default: 0, null: false
+    t.integer "salary_max", default: 0
+    t.string "post_title", null: false
+    t.string "job_description", null: false
+    t.date "job_expired_date", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employer_id"], name: "index_job_posts_on_employer_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -56,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
 
   add_foreign_key "candidates", "users"
   add_foreign_key "employers", "users"
+  add_foreign_key "job_posts", "employers"
 end

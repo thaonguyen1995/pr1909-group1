@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@job_post) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :employer %>
+    <%= f.input :job_location %>
+    <%= f.input :job_type %>
+    <%= f.input :job_status %>
+    <%= f.input :post_priority %>
+    <%= f.input :salary_min %>
+    <%= f.input :salary_max %>
+    <%= f.input :post_title %>
+    <%= f.input :job_description %>
+    <%= f.input :job_expired_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

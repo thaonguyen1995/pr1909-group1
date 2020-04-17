@@ -1,3 +1,14 @@
   u_type:
     general: { candidate: 1, employer: 2, admin: 3 }
     set_view: [ candidate, employer ]
+
+  job_location:
+    general: { ha_noi: 1, da_nang: 2, ho_chi_minh: 3, others: 4}
+    view: { "Hà Nội": "ha_noi", "Đà Nẵng": "da_nang", "Hồ Chí Minh": "ho_chi_minh", "Others": "others" }
+
+  job_type:
+    general: { full_time: 1, part_time: 2, freelance: 3, contract: 4 }
+    view: {"Full time": "full_time", "Part time": "part_time", "Contract": "contract"}
+
+  job_status:
+    general: { pending: 1, accepted: 2, rejected: 3 }
