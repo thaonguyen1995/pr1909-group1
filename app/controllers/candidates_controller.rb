@@ -69,6 +69,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :candidate_fullname, :date_of_birth, :phone, :avatar, :cv)
+    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv)
   end
 end
