@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_04_18_172410) do
+=======
+ActiveRecord::Schema.define(version: 2020_04_17_074116) do
+>>>>>>> create and validate model job post
 
   create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -44,16 +48,26 @@ ActiveRecord::Schema.define(version: 2020_04_18_172410) do
     t.index ["user_id"], name: "index_employers_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "job_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+=======
+  create_table "job_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+>>>>>>> create and validate model job post
     t.bigint "employer_id", null: false
     t.integer "job_location", default: 1, null: false
     t.integer "job_type", null: false
     t.integer "job_status", default: 1, null: false
     t.integer "post_priority", default: 5, null: false
     t.integer "salary_min", default: 0, null: false
+<<<<<<< HEAD
     t.integer "salary_max", default: 1
     t.string "post_title", limit: 100, null: false
     t.text "job_description", null: false
+=======
+    t.integer "salary_max", default: 0
+    t.string "post_title", null: false
+    t.string "job_description", null: false
+>>>>>>> create and validate model job post
     t.date "job_expired_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
