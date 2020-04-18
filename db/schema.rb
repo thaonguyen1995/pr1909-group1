@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_10_112749) do
 
-  create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date_of_birth"
     t.string "phone", limit: 16
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 
-  create_table "employers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "employers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "company_logo"
     t.string "company_name", limit: 70
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_112749) do
     t.index ["user_id"], name: "index_employers_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

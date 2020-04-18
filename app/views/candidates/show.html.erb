@@ -1,12 +1,5 @@
-<p>
-  <strong>User:</strong>
-  <%= @candidate.user_id %>
-</p>
+<%= image_tag @candidate.avatar.url(:thumb) if @candidate.avatar? %>
 
-<p>
-  <strong>Candidate name:</strong>
-  <%= @candidate.candidate_fullname %>
-</p>
 
 <p>
   <strong>Date of birth:</strong>
@@ -18,14 +11,8 @@
   <%= @candidate.phone %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @candidate.avatar %>
-</p>
 
-<p>
-  <strong>Cv:</strong>
-  <%= @candidate.cv %>
+<a href="<%= @candidate.cv %>" download>Download CV</a>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |

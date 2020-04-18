@@ -1,11 +1,6 @@
 <p>
-  <strong>User:</strong>
-  <%= @employer.user_id %>
-</p>
-
-<p>
   <strong>Company logo:</strong>
-  <%= @employer.company_logo %>
+  <%= image_tag @employer.company_logo.url(:thumb) if @employer.company_logo? %>
 </p>
 
 <p>
