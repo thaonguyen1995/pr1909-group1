@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :job_posts
+  mount Ckeditor::Engine => '/ckeditor'
   root 'blog#index'
 
   resources :employers
