@@ -38,6 +38,8 @@ gem 'simple_form'
 gem 'font-awesome-sass'
 gem "faker"
 gem 'rails_admin'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'config'
 
 group :development, :test do

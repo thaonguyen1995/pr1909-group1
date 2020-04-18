@@ -1,5 +1,7 @@
 class CandidatesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update]
   before_action :get_candidate, only: [:show, :edit, :update, :destroy]
+  # TODO: authorization: candidate can edit his self profile only
 
   # GET /candidates
   # GET /candidates.json
@@ -10,6 +12,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
+    @candidate = Candidate.find_by(params[:id])
   end
 
   # GET /candidates/new
@@ -67,6 +70,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :candidate_fullname, :date_of_birth, :phone, :avatar, :cv)
+    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv)
   end
 end

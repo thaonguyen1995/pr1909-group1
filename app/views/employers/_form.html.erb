@@ -1,10 +1,10 @@
-<%= simple_form_for(@employer) do |f| %>
+<%= simple_form_for(@employer, html: { multipart: true}) do |f| %>
 <%= f.error_notification %>
 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 <div class="form-inputs">
   <%= f.association :user %>
-  <%= f.input :company_logo %>
+  <strong>Company Logo</strong> <%= f.file_field :company_logo %>
   <%= f.input :company_name %>
   <%= f.input :company_size %>
   <%= f.input :company_description %>
