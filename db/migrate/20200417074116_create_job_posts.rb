@@ -12,6 +12,7 @@ class CreateJobPosts < ActiveRecord::Migration[6.0]
       t.integer :salary_max, default: 1
       t.string :post_title, null: false, limit: 100
       t.text :job_description, null: false
+<<<<<<< HEAD
 =======
       t.integer :job_location, null: false, default: 1
       t.integer :job_type, null: false
@@ -27,6 +28,8 @@ class CreateJobPosts < ActiveRecord::Migration[6.0]
       t.string :post_title, null: false, limit: 100
       t.string :job_description, null: false
 >>>>>>> create and validate model job post
+=======
+>>>>>>> fix as requirement 1
       t.date :job_expired_date, null: false
 
       t.timestamps

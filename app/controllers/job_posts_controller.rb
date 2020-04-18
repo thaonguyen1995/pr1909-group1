@@ -39,8 +39,11 @@ class JobPostsController < ApplicationController
 =======
 
     respond_to do |format|
+<<<<<<< HEAD
       params[employer_id: 2]
 >>>>>>> create and validate model job post
+=======
+>>>>>>> fix as requirement 1
       if @job_post.save
         format.html { redirect_to @job_post, notice: 'Job post was successfully created.' }
         format.json { render :show, status: :created, location: @job_post }

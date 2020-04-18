@@ -4,10 +4,14 @@
 
   job_location:
 <<<<<<< HEAD
+<<<<<<< HEAD
     general: { ha_noi: 1, da_nang: 2, ho_chi_minh: 3, others: 4 }
 =======
     general: { ha_noi: 1, da_nang: 2, ho_chi_minh: 3, others: 4}
 >>>>>>> create and validate model job post
+=======
+    general: { ha_noi: 1, da_nang: 2, ho_chi_minh: 3, others: 4 }
+>>>>>>> fix as requirement 1
     view: { "Hà Nội": "ha_noi", "Đà Nẵng": "da_nang", "Hồ Chí Minh": "ho_chi_minh", "Others": "others" }
 
   job_type:
@@ -21,5 +25,9 @@
     view: {"Full time": "full_time", "Part time": "part_time", "Contract": "contract"}
 
   job_status:
+<<<<<<< HEAD
     general: { pending: 1, accepted: 2, rejected: 3 }
 >>>>>>> create and validate model job post
+=======
+    general: { pending: 1, accepted: 2, rejected: 3, expired: 4 }
+>>>>>>> fix as requirement 1
