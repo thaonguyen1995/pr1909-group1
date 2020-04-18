@@ -3,6 +3,7 @@ class CreateJobPosts < ActiveRecord::Migration[6.0]
     create_table :job_posts do |t|
       t.references :employer, null: false, foreign_key: true
 <<<<<<< HEAD
+<<<<<<< HEAD
       t.integer :job_location, null: false, default: 1, inclusion: Settings.job_location.general.to_h.values
       t.integer :job_type, null: false, inclusion: Settings.job_type.general.to_h.values
       t.integer :job_status, null: false, default: 1, inclusion: Settings.job_status.general.to_h.values
@@ -15,10 +16,15 @@ class CreateJobPosts < ActiveRecord::Migration[6.0]
       t.integer :job_location, null: false, default: 1
       t.integer :job_type, null: false
       t.integer :job_status, null: false, default: 1
+=======
+      t.integer :job_location, null: false, default: 1, inclusion: Settings.job_location.general.to_h.values
+      t.integer :job_type, null: false, inclusion: Settings.job_type.general.to_h.values
+      t.integer :job_status, null: false, default: 1, inclusion: Settings.job_status.general.to_h.values
+>>>>>>> create and validate job post
       t.integer :post_priority, null: false, default: 5
       t.integer :salary_min, null: false, default: 0
-      t.integer :salary_max, default: 0
-      t.string :post_title, null: false
+      t.integer :salary_max, default: 1
+      t.string :post_title, null: false, limit: 100
       t.string :job_description, null: false
 >>>>>>> create and validate model job post
       t.date :job_expired_date, null: false

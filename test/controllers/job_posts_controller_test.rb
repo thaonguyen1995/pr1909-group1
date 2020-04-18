@@ -18,6 +18,9 @@ class JobPostsControllerTest < ActionDispatch::IntegrationTest
   test "should create job_post" do
     assert_difference('JobPost.count') do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> create and validate job post
       post job_posts_url,
            params:
         {
@@ -30,9 +33,12 @@ class JobPostsControllerTest < ActionDispatch::IntegrationTest
             salary_max: @job_post.salary_max, salary_min: @job_post.salary_min,
           },
         }
+<<<<<<< HEAD
 =======
       post job_posts_url, params: { job_post: { employer_id: @job_post.employer_id, job_description: @job_post.job_description, job_expired_date: @job_post.job_expired_date, job_location: @job_post.job_location, job_status: @job_post.job_status, job_type: @job_post.job_type, post_priority: @job_post.post_priority, post_title: @job_post.post_title, salary_max: @job_post.salary_max, salary_min: @job_post.salary_min } }
 >>>>>>> create and validate model job post
+=======
+>>>>>>> create and validate job post
     end
 
     assert_redirected_to job_post_url(JobPost.last)
@@ -50,6 +56,9 @@ class JobPostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update job_post" do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> create and validate job post
     patch job_post_url(@job_post),
           params:
           {
@@ -62,9 +71,12 @@ class JobPostsControllerTest < ActionDispatch::IntegrationTest
               salary_max: @job_post.salary_max, salary_min: @job_post.salary_min,
             },
           }
+<<<<<<< HEAD
 =======
     patch job_post_url(@job_post), params: { job_post: { employer_id: @job_post.employer_id, job_description: @job_post.job_description, job_expired_date: @job_post.job_expired_date, job_location: @job_post.job_location, job_status: @job_post.job_status, job_type: @job_post.job_type, post_priority: @job_post.post_priority, post_title: @job_post.post_title, salary_max: @job_post.salary_max, salary_min: @job_post.salary_min } }
 >>>>>>> create and validate model job post
+=======
+>>>>>>> create and validate job post
     assert_redirected_to job_post_url(@job_post)
   end
 

@@ -77,6 +77,7 @@ class JobPostsController < ApplicationController
 
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   def get_job_post
     @job_post = JobPost.find(params[:id])
@@ -102,4 +103,16 @@ class JobPostsController < ApplicationController
       params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority, :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
     end
 >>>>>>> create and validate model job post
+=======
+
+  def get_job_post
+    @job_post = JobPost.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def job_post_params
+    params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority,
+                                     :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
+  end
+>>>>>>> create and validate job post
 end
