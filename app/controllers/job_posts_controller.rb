@@ -27,7 +27,6 @@ class JobPostsController < ApplicationController
     @job_post = JobPost.new(job_post_params)
 
     respond_to do |format|
-      params[employer_id: 2]
       if @job_post.save
         format.html { redirect_to @job_post, notice: 'Job post was successfully created.' }
         format.json { render :show, status: :created, location: @job_post }

@@ -9,7 +9,7 @@ class CreateJobPosts < ActiveRecord::Migration[6.0]
       t.integer :salary_min, null: false, default: 0
       t.integer :salary_max, default: 1
       t.string :post_title, null: false, limit: 100
-      t.string :job_description, null: false
+      t.text :job_description, null: false
       t.date :job_expired_date, null: false
 
       t.timestamps

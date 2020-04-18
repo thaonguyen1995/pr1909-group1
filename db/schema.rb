@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2020_04_17_074116) do
     t.integer "job_status", default: 1, null: false
     t.integer "post_priority", default: 5, null: false
     t.integer "salary_min", default: 0, null: false
-    t.integer "salary_max", default: 0
-    t.string "post_title", null: false
-    t.string "job_description", null: false
+    t.integer "salary_max", default: 1
+    t.string "post_title", limit: 100, null: false
+    t.text "job_description", null: false
     t.date "job_expired_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
