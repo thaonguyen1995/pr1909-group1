@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :get_candidate, only: [:show, :edit, :update, :destroy]
+  # TODO: authorization: candidate can edit his self profile only
 
   # GET /candidates
   # GET /candidates.json
