@@ -63,13 +63,14 @@ class JobPostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def get_job_post
-      @job_post = JobPost.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def job_post_params
-      params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority, :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
-    end
+  def get_job_post
+    @job_post = JobPost.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def job_post_params
+    params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority,
+                                     :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
+  end
 end
