@@ -1,5 +1,6 @@
 class Employer < ApplicationRecord
   belongs_to :user
+  has_many :job_post, dependent: :destroy
   mount_uploader :company_logo, CompanyLogoUploader
 
   # validate
