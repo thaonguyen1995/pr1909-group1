@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :get_candidate, only: [:show, :edit, :update, :destroy]
-  # TODO: authorization: candidate can edit his self profile only
+  before_action :check_authorization, only: [:edit, :update]
 
   # GET /candidates
   # GET /candidates.json
@@ -74,5 +74,11 @@ class CandidatesController < ApplicationController
 
   def candidate_params
     params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv, user_attributes: [:id, :first_name, :last_name])
+  end
+
+  def check_authorization
+    unless current_user.id == Candidate.find(params[:id]).user_id
+      redirect_to root_url
+    end
   end
 end
