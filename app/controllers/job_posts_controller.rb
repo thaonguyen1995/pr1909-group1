@@ -1,26 +1,12 @@
 class JobPostsController < ApplicationController
   before_action :get_job_post, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-<<<<<<< HEAD
+  before_action :login_user, except: :show
   before_action :is_employer, except: :show
-=======
->>>>>>> create and validate model job post
-=======
-  before_action :is_employer, except: :show
->>>>>>> CRUD job post
 
   # GET /job_posts
   # GET /job_posts.json
   def index
-<<<<<<< HEAD
-<<<<<<< HEAD
     @job_posts = JobPost.find current_user.employer.job_post.ids
-=======
-    @job_posts = JobPost.all
->>>>>>> create and validate model job post
-=======
-    @job_posts = JobPost.find current_user.employer.job_post.ids
->>>>>>> CRUD job post
   end
 
   # GET /job_posts/1
@@ -41,21 +27,8 @@ class JobPostsController < ApplicationController
   # POST /job_posts.json
   def create
     @job_post = JobPost.new(job_post_params)
-<<<<<<< HEAD
-<<<<<<< HEAD
     @job_post.employer_id = current_user.employer.id
     respond_to do |format|
-=======
-
-=======
-    @job_post.employer_id = current_user.employer.id
->>>>>>> CRUD job post
-    respond_to do |format|
-<<<<<<< HEAD
-      params[employer_id: 2]
->>>>>>> create and validate model job post
-=======
->>>>>>> fix as requirement 1
       if @job_post.save
         format.html { redirect_to @job_post, notice: 'Job post was successfully created.' }
         format.json { render :show, status: :created, location: @job_post }
@@ -91,8 +64,6 @@ class JobPostsController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   def get_job_post
     @job_post = JobPost.find(params[:id])
@@ -105,33 +76,12 @@ class JobPostsController < ApplicationController
   end
 
   def is_employer
-    redirect_to :new_user_session unless current_user && current_user.employer?
+    redirect_to root_url unless current_user.employer?
   end
-=======
-    # Use callbacks to share common setup or constraints between actions.
-    def get_job_post
-      @job_post = JobPost.find(params[:id])
+
+  def login_user
+    unless signed_in?
+      redirect_to :new_user_session
     end
-
-    # Only allow a list of trusted parameters through.
-    def job_post_params
-      params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority, :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
-    end
->>>>>>> create and validate model job post
-=======
-
-  def get_job_post
-    @job_post = JobPost.find(params[:id])
   end
-
-  # Only allow a list of trusted parameters through.
-  def job_post_params
-    params.require(:job_post).permit(:job_location, :job_type, :salary_min, :salary_max,
-                                     :post_title, :job_description, :job_expired_date)
-  end
-
-  def is_employer
-    redirect_to :new_user_session unless current_user && current_user.employer?
-  end
->>>>>>> create and validate job post
 end

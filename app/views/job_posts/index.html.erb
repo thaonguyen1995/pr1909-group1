@@ -23,30 +23,13 @@
     <% @job_posts.each do |job_post| %>
       <tr>
         <td><%= job_post.employer_id %></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <td><%= JobPost.job_location_views.key(job_post.job_location) %></td>
         <td><%= JobPost.job_type_views.key(job_post.job_type) %></td>
-=======
-        <td><%= job_post.job_location %></td>
-        <td><%= job_post.job_type %></td>
->>>>>>> create and validate model job post
-=======
-        <td><%= JobPost.job_location_views.key(job_post.job_location) %></td>
-        <td><%= JobPost.job_type_views.key(job_post.job_type) %></td>
->>>>>>> CRUD job post
         <td><%= job_post.job_status %></td>
         <td><%= job_post.post_priority %></td>
         <td><%= job_post.salary_min %></td>
         <td><%= job_post.salary_max %></td>
         <td><%= job_post.post_title %></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        <td><%= job_post.job_description %></td>
->>>>>>> create and validate model job post
-=======
->>>>>>> CRUD job post
         <td><%= job_post.job_expired_date %></td>
         <td><%= link_to 'Show', job_post %></td>
         <td><%= link_to 'Edit', edit_job_post_path(job_post) %></td>
