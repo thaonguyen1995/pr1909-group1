@@ -1,5 +1,6 @@
 class Candidate < ApplicationRecord
   belongs_to :user
+  accepts_nested_attributes_for :user
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cv, CvUploader
 

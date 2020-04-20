@@ -12,16 +12,18 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
-    @candidate = Candidate.find_by(params[:id])
+    @candidate = Candidate.find(params[:id])
   end
 
   # GET /candidates/new
   def new
     @candidate = Candidate.new
+    # is it ok to create candidate like this? Actually, we create user first.
   end
 
   # GET /candidates/1/edit
   def edit
+    @candidate = Candidate.find(params[:id])
   end
 
   # POST /candidates
@@ -42,6 +44,7 @@ class CandidatesController < ApplicationController
   # PATCH/PUT /candidates/1
   # PATCH/PUT /candidates/1.json
   def update
+    @candidate = Candidate.find(params[:id])
     respond_to do |format|
       if @candidate.update(candidate_params)
         format.html { redirect_to @candidate, notice: 'Candidate was successfully updated.' }
@@ -70,6 +73,6 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv)
+    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv, user_attributes: [:id, :first_name, :last_name])
   end
 end
