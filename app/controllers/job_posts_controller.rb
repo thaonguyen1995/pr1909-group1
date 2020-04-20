@@ -1,18 +1,26 @@
 class JobPostsController < ApplicationController
   before_action :get_job_post, only: [:show, :edit, :update, :destroy]
 <<<<<<< HEAD
+<<<<<<< HEAD
   before_action :is_employer, except: :show
 =======
 >>>>>>> create and validate model job post
+=======
+  before_action :is_employer, except: :show
+>>>>>>> CRUD job post
 
   # GET /job_posts
   # GET /job_posts.json
   def index
 <<<<<<< HEAD
+<<<<<<< HEAD
     @job_posts = JobPost.find current_user.employer.job_post.ids
 =======
     @job_posts = JobPost.all
 >>>>>>> create and validate model job post
+=======
+    @job_posts = JobPost.find current_user.employer.job_post.ids
+>>>>>>> CRUD job post
   end
 
   # GET /job_posts/1
@@ -34,10 +42,14 @@ class JobPostsController < ApplicationController
   def create
     @job_post = JobPost.new(job_post_params)
 <<<<<<< HEAD
+<<<<<<< HEAD
     @job_post.employer_id = current_user.employer.id
     respond_to do |format|
 =======
 
+=======
+    @job_post.employer_id = current_user.employer.id
+>>>>>>> CRUD job post
     respond_to do |format|
 <<<<<<< HEAD
       params[employer_id: 2]
@@ -114,8 +126,12 @@ class JobPostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def job_post_params
-    params.require(:job_post).permit(:employer_id, :job_location, :job_type, :job_status, :post_priority,
-                                     :salary_min, :salary_max, :post_title, :job_description, :job_expired_date)
+    params.require(:job_post).permit(:job_location, :job_type, :salary_min, :salary_max,
+                                     :post_title, :job_description, :job_expired_date)
+  end
+
+  def is_employer
+    redirect_to :new_user_session unless current_user && current_user.employer?
   end
 >>>>>>> create and validate job post
 end

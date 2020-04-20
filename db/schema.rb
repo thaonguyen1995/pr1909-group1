@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_074116) do
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -38,6 +39,9 @@ ActiveRecord::Schema.define(version: 2020_04_17_074116) do
   end
 
   create_table "employers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+=======
+  create_table "employers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+>>>>>>> CRUD job post
     t.bigint "user_id", null: false
     t.string "company_logo"
     t.string "company_name", limit: 70
