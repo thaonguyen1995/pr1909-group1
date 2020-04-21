@@ -1,6 +1,6 @@
 class JobPostsController < ApplicationController
   before_action :get_job_post, only: [:show, :edit, :update, :destroy, :authenticated_employer]
-  before_action :login_user, except: [:show, :index]
+  before_action :only_for_employer, except: [:show, :index]
   before_action :authenticated_employer, only: [:edit, :update, :destroy]
 
   def index
@@ -79,5 +79,9 @@ class JobPostsController < ApplicationController
 
   def login_user
     redirect_to :new_user_session unless signed_in?
+  end
+
+  def only_for_employer
+    redirect_to root_url unless is_employer?
   end
 end

@@ -2,7 +2,7 @@
 
 <h1>Job Posts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Employer</th>
@@ -34,8 +34,6 @@
         <td><%= link_to 'Show', job_post %></td>
         <% if authenticate_employer job_post %>
           <td><%= link_to "Edit", edit_job_post_path(job_post) %></td>
-        <% end %>
-        <% if authenticate_employer job_post %>
           <td><%= link_to 'Destroy', job_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
@@ -44,5 +42,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Job Post', new_job_post_path %>
+<% if is_employer? %>
+  <td><%= link_to 'New Job Post', new_job_post_path %></td>
+<% end %>
