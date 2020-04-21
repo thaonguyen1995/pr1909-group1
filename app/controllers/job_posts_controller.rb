@@ -1,10 +1,10 @@
 class JobPostsController < ApplicationController
-  before_action :get_job_post, only: [:show, :edit, :update, :destroy]
-  before_action :login_user, except: :show
-  before_action :is_employer, except: :show
+  before_action :get_job_post, only: [:show, :edit, :update, :destroy, :authenticated_employer]
+  before_action :login_user, except: [:show, :index]
+  before_action :authenticated_employer, only: [:edit, :update, :destroy]
 
   def index
-    @job_posts = JobPost.find current_user.employer.job_post.ids
+    @job_posts = JobPost.all
   end
 
   # GET /job_posts/1
@@ -73,8 +73,8 @@ class JobPostsController < ApplicationController
                                      :post_title, :job_description, :job_expired_date)
   end
 
-  def is_employer
-    redirect_to root_url unless current_user.employer?
+  def authenticated_employer
+    redirect_to root_url unless authenticate_employer @job_post
   end
 
   def login_user
