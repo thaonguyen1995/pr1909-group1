@@ -69,7 +69,8 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv, user_attributes: [:id, :first_name, :last_name])
+    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv,
+                                      user_attributes: [:id, :first_name, :last_name])
   end
 
   def check_authorization

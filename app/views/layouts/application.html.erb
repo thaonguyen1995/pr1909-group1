@@ -16,21 +16,21 @@
     <%= render  "shared/header" %>
   </div>
 
-  <div class="container">
-    <% if flash[:notice] %>
-    <div class="notice global-notification">
-      <%= notice %></p>
+    <div class="container">
+      <% if flash[:notice] %>
+      <div class="notice global-notification">
+        <%= notice %></p>
+      </div>
+      <% end %>
+      <% if flash[:alert] %>
+      <div class="alert global-notification">
+        <%= alert %></p>
+      </div>
+      <% end %>
+      <%= yield %>
     </div>
-    <% end %>
-    <% if flash[:alert] %>
-    <div class="alert global-notification">
-      <%= alert %></p>
-    </div>
-    <% end %>
-    <%= yield %>
-  </div>
 
-  <div class="container-fluid">
+  <div class="footer container-fluid">
     <%= render  "shared/footer" %>
   </div>
 
