@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :get_candidate, only: [:show, :edit, :update, :destroy]
-  # TODO: authorization: candidate can edit his self profile only
+  before_action :check_authorization, only: [:edit, :update]
 
   # GET /candidates
   # GET /candidates.json
@@ -12,12 +12,12 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
-    @candidate = Candidate.find_by(params[:id])
   end
 
   # GET /candidates/new
   def new
     @candidate = Candidate.new
+    # is it ok to create candidate like this? Actually, we create user first.
   end
 
   # GET /candidates/1/edit
@@ -27,7 +27,6 @@ class CandidatesController < ApplicationController
   # POST /candidates
   # POST /candidates.json
   def create
-    @candidate = Candidate.new(candidate_params)
     respond_to do |format|
       if @candidate.save
         format.html { redirect_to @candidate, notice: 'Candidate was successfully created.' }
@@ -70,6 +69,13 @@ class CandidatesController < ApplicationController
   end
 
   def candidate_params
-    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv)
+    params.require(:candidate).permit(:user_id, :date_of_birth, :phone, :avatar, :cv, user_attributes: [:id, :first_name, :last_name])
+  end
+
+  def check_authorization
+    unless current_user.id == Candidate.find(params[:id]).user_id
+      flash[:notice] = "You don't have permission to edit this page"
+      redirect_to root_url
+    end
   end
 end

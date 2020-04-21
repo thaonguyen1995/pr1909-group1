@@ -1,5 +1,14 @@
 <%= image_tag @candidate.avatar.url(:thumb) if @candidate.avatar? %>
 
+<p>
+  <strong>First Name:</strong>
+  <%= @candidate.user.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @candidate.user.last_name %>
+</p>
 
 <p>
   <strong>Date of birth:</strong>
@@ -12,8 +21,10 @@
 </p>
 
 
-<a href="<%= @candidate.cv %>" download>Download CV</a>
-</p>
+<a href="<%= @candidate.cv %>" download>Download CV</a> 
+<p>
 
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+<% if current_user.id == @candidate.user_id %>
+  <%= link_to 'Edit', edit_candidate_path(@candidate) %>|
+<% end %>
+<%= link_to 'Back', root_path %>
