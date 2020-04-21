@@ -12,7 +12,6 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
-    @candidate = Candidate.find(params[:id])
   end
 
   # GET /candidates/new
@@ -23,13 +22,11 @@ class CandidatesController < ApplicationController
 
   # GET /candidates/1/edit
   def edit
-    @candidate = Candidate.find(params[:id])
   end
 
   # POST /candidates
   # POST /candidates.json
   def create
-    @candidate = Candidate.new(candidate_params)
     respond_to do |format|
       if @candidate.save
         format.html { redirect_to @candidate, notice: 'Candidate was successfully created.' }
@@ -44,7 +41,6 @@ class CandidatesController < ApplicationController
   # PATCH/PUT /candidates/1
   # PATCH/PUT /candidates/1.json
   def update
-    @candidate = Candidate.find(params[:id])
     respond_to do |format|
       if @candidate.update(candidate_params)
         format.html { redirect_to @candidate, notice: 'Candidate was successfully updated.' }
@@ -78,6 +74,7 @@ class CandidatesController < ApplicationController
 
   def check_authorization
     unless current_user.id == Candidate.find(params[:id]).user_id
+      flash[:notice] = "You don't have permission to edit this page"
       redirect_to root_url
     end
   end
