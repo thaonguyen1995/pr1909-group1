@@ -80,8 +80,4 @@ class JobPostsController < ApplicationController
   def only_for_employer
     redirect_to root_url unless is_employer?
   end
-
-  def only_for_employer
-    redirect_to root_url unless is_employer?
-  end
 end
