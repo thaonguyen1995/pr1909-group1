@@ -77,10 +77,6 @@ class JobPostsController < ApplicationController
     redirect_to root_url unless authenticate_employer @job_post
   end
 
-  def login_user
-    redirect_to :new_user_session unless signed_in?
-  end
-
   def only_for_employer
     redirect_to root_url unless is_employer?
   end
