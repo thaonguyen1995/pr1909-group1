@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_014509) do
     t.string "company_logo"
     t.string "company_name", limit: 70
     t.string "company_size", limit: 20
-    t.text "company_description"
+    t.string "company_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_employers_on_user_id"

@@ -5,6 +5,7 @@ vi:
       Home: 'Trang chủ'
       Log in: 'Đăng nhập'
       Sign up: 'Đăng ký'
+      Account setting: 'Thiết lập tài khoản'
       Profile: 'Hồ sơ'
       Log out:  'Đăng xuất'
     footer: 
@@ -30,3 +31,43 @@ vi:
       prompt: 'Lựa chọn Nhà tuyển dụng hoặc ứng viên'
       label: 'Bạn là?'
       error: 'Yêu cầu chức năng người dùng, vui lòng chọn'
+
+#view common
+  common:
+    Edit: 'Chỉnh sửa'
+    Back: 'Trở về'
+    Delete: 'Xóa'
+    Show: 'Xem'
+    cancel: 'Huỷ'
+    action: 'Thao tác'
+
+#view candidate
+  candidate:
+    Candidates: 'Tất cả ứng viên'
+    Date of birth: 'Ngày sinh'
+    Phone: 'Điện thoại'
+
+    show:
+      Profile: 'Hồ sơ ứng viên'
+      Contact: 'Liên hệ'
+      Download: 'Tải xuống CV'
+    edit:
+      Editing: 'Chỉnh sửa ứng viên'
+
+#view user
+  user:
+    First Name: 'Tên'
+    Last Name: 'Họ'
+    
+#view employer
+  employer:
+    Employers: 'Tất cả nhà tuyển dụng'
+    logo: 'Logo công ty'
+    name: 'Tên công ty'
+    size: 'Quy mô công ty'
+    description: 'Mô tả'
+
+    show:
+      Profile: 'Hồ sơ công ty'
+    edit:
+      Editing: 'Chỉnh sửa nhà tuyển dụng'

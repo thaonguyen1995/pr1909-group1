@@ -1,14 +1,7 @@
+<h2><%= t('candidate.show.Profile') %></h2>
+
 <%= image_tag @candidate.avatar.url(:thumb) if @candidate.avatar? %>
 
-<p>
-  <strong>First Name:</strong>
-  <%= @candidate.user.first_name %>
-</p>
-
-<p>
-  <strong>Last Name:</strong>
-  <%= @candidate.user.last_name %>
-</p>
 
 <p>
   <strong>Date of birth:</strong>
