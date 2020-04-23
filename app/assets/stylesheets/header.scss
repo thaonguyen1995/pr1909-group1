@@ -24,7 +24,13 @@ header {
   ul li {
     display: inline-block;
   }
+  .phone {
+    text-align: left;
+  }
   .email {
+    text-align: center;
+  }
+  .language {
     text-align: right;
   }
 }
@@ -41,8 +47,6 @@ header {
   .navbar-brand {
     font-weight: 500;
     font-size: 30px;
-    line-height: 40px;
-    padding: 12px 0px 0px 12px;
   }
   .navbar-nav li a {
     font-weight: bold;
