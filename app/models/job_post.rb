@@ -1,5 +1,6 @@
 class JobPost < ApplicationRecord
   belongs_to :employer
+  has_many :apply_activity, dependent: :destroy
 
   enum job_location: Settings.job_location.general.to_h
   enum job_type: Settings.job_type.general.to_h

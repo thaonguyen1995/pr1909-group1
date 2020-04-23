@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'blog#index'
+  root 'job_posts#index'
 
   resources :employers
   resources :candidates

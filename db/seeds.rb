@@ -1,5 +1,5 @@
 company_size = ["50-99 staffs", "100-299 staffs", "300-499 staffs", "500-999 staffs", ">=1000 staffs"]
-
+salary = [{ min:100, max:500 }, { min:300, max:700 }, { min:500, max:1000 }, { min:1500, max:2000 }]
 20.times do |n|
 User.create!(
   first_name: Faker::Name.first_name,
@@ -37,4 +37,28 @@ Employer.create!(
   company_name: Faker::Company.name,
   company_size: company_size.sample,
   company_description: "company_description #{2*n +1}")
+end
+
+100.times do |n|
+  salary_sample = salary.sample
+  JobPost.create!(
+  employer_id: rand(1..20),
+  job_location: rand(1..4),
+  job_type: rand(1..4),
+  job_status: rand(1..4),
+  post_priority: rand(1..5),
+  salary_min: salary_sample[:min],
+  salary_max: salary_sample[:max],
+  post_title: Faker::Job.title,
+  job_description: "job_description #{n +1}",
+  job_expired_date: Date.today)
+end
+
+20.times do |n|
+  5.times do |m|
+    ApplyActivity.create!(
+      job_post_id: (n + 1)*(m + 1),
+      candidate_id: n + 1
+    )
+  end
 end
