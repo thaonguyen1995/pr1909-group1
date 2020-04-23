@@ -9,13 +9,21 @@ vi:
       Log out:  'Đăng xuất'
     footer: 
       About: 'Thông tin thêm'
+
+      About Us: 'Về chúng tôi'
+      Contact Us: 'Liên hệ với chúng tôi'
+      Contribute: 'Đóng góp'
+      Privacy Policy: ' Chính sách bảo mật'
+      Sitemap:  'Sơ đồ trang web'
+
       Jobs by Type: 'Việc làm theo hình thức'
       Jobs by City: 'Việc làm theo thành phố'
       Quick Links: 'Đường dẫn nhanh'
       Vision:  'JobUp là một nền tảng kết nối giữa nhà tuyển dụng và ứng viên trong ngành IT.
                 Nó dành cho các nhà tuyển dụng tìm kiếm được ứng viên phù hợp
                 và cho các ừng viên có thể tìm kiếm, ứng tuyển được công việc phù hợp'
-                
+      Copyright: 'Bản quyền'
+
 #view devise
   devise:
     new:

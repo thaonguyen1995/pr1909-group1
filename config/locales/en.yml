@@ -8,12 +8,20 @@ en:
       Log out:  'Log out'
     footer: 
       About: 'About'
+
+      About Us: 'About Us'
+      Contact Us: 'Contact Us'
+      Contribute: 'Contribute'
+      Privacy Policy: 'Privacy Policy'
+      Sitemap:  'Sitemap'
+
       Jobs by Type: 'Jobs by Type'
       Jobs by City: 'Jobs by City'
       Quick Links: 'Quick Links'
       Vision: ' JobUp is a platform connecting employers and IT candidates. 
               It is for employers who are looking for suitable candidates and 
               for job seekers who can find suitable jobs '
+      Copyright: 'Copyright '
               
 #view devise
   devise:
