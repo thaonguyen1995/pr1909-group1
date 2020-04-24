@@ -8,16 +8,17 @@
     <%= f.simple_fields_for :user do |g| %>
       <div class="row">
         <div class="col-md-6">
-          <%= g.input :first_name %> 
+          <%= g.input :first_name, label: t('user.First Name') %> 
         </div>
         <div class="col-md-6">
-          <%= g.input :last_name %>
+          <%= g.input :last_name, label: t('user.Last Name') %>
         </div>
       </div>
     <% end %>
 
-    <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 70,end_year: Date.today.year - 17,order: [:day, :month, :year] %>
-    <%= f.input :phone %>
+    <%= f.input :date_of_birth, as: :date, label: t('candidate.Date of birth'), 
+                start_year: Date.today.year - 70,end_year: Date.today.year - 17,order: [:day, :month, :year] %>
+    <%= f.input :phone, label: t('candidate.Phone') %>
 
     <%= f.input :cv, as: :file %>
   </div>

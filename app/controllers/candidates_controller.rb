@@ -6,7 +6,9 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-    @candidates = Candidate.all.paginate(page: params[:page], per_page: 10)
+    return @candidates = Candidate.all.paginate(page: params[:page], per_page: Settings.perpage) if current_user.admin?
+    redirect_to root_path
+    flash[:notice] = "You don't have permission to show this page"
   end
 
   # GET /candidates/1

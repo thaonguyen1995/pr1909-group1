@@ -40,9 +40,18 @@ vi:
     
 #view candidate
   candidate:
-    Candidates: 'Ứng viên'
+    Candidates: 'Tất cả ứng viên'
+    Date of birth: 'Ngày sinh'
+    Phone: 'Điện thoại'
+
     show:
-      Profile: 'Hồ sơ'
+      Profile: 'Hồ sơ ứng viên'
       Contact: 'Liên hệ'
+      Download: 'Tải xuống CV'
     edit:
       Editing: 'Chỉnh sửa ứng viên'
+
+#view user
+  user:
+    First Name: 'Tên'
+    Last Name: 'Họ'

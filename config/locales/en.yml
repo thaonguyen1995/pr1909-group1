@@ -40,8 +40,17 @@ en:
 #view candidate
   candidate:
     Candidates: 'Candidates'
+    Date of birth: 'Date of birth'
+    Phone: 'Phone'
+
     show:
-      Profile: 'Profile'
+      Profile: 'Profile Candidate'
       Contact: 'Contact'
+      Download: 'Download CV'
     edit:
       Editing: 'Editing Candidate'
+
+#view user
+  user:
+    First Name: 'First Name'
+    Last Name: 'Last Name'
