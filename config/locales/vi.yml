@@ -7,7 +7,7 @@ vi:
       Sign up: 'Đăng ký'
       Profile: 'Hồ sơ'
       Log out:  'Đăng xuất'
-    footer: 
+    footer:
       About: 'Thông tin thêm'
 
       About Us: 'Về chúng tôi'
@@ -30,3 +30,21 @@ vi:
       prompt: 'Lựa chọn Nhà tuyển dụng hoặc ứng viên'
       label: 'Bạn là?'
       error: 'Yêu cầu chức năng người dùng, vui lòng chọn'
+      first_name: 'Tên'
+      last_name: 'Họ'
+
+#view search
+  search:
+    label: 'Tìm Việc'
+    prompt:
+      location: 'Địa Điểm'
+      job_type: 'Loại Công Việc'
+      salary_min: 'Lương Tối Thiểu'
+      salary_max: 'Lương Tối Đa'
+    btn_search: 'Tìm Kiếm'
+
+  job_post:
+    new_job: 'Đăng bài'
+    apply: 'Ứng Tuyển'
+    edit: 'Sửa'
+    destroy: 'Xóa'
