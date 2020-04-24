@@ -30,3 +30,19 @@ vi:
       prompt: 'Lựa chọn Nhà tuyển dụng hoặc ứng viên'
       label: 'Bạn là?'
       error: 'Yêu cầu chức năng người dùng, vui lòng chọn'
+
+#view common
+  common:
+    Edit: 'Chỉnh sửa'
+    Back: 'Trở về'
+    Delete: 'Xóa'
+    Show: 'Xem'
+    
+#view candidate
+  candidate:
+    Candidates: 'Ứng viên'
+    show:
+      Profile: 'Hồ sơ'
+      Contact: 'Liên hệ'
+    edit:
+      Editing: 'Chỉnh sửa ứng viên'

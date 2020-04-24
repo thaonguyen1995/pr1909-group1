@@ -29,3 +29,19 @@ en:
       prompt: 'Select Employer or Candidate'
       label: 'You are?'
       error: 'User functionality is required, please select'
+
+#view common
+  common:
+    Edit: 'Edit'
+    Back: 'Back'
+    Delete: 'Delete'
+    Show: 'Show'
+    
+#view candidate
+  candidate:
+    Candidates: 'Candidates'
+    show:
+      Profile: 'Profile'
+      Contact: 'Contact'
+    edit:
+      Editing: 'Editing Candidate'
